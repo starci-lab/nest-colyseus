@@ -6,7 +6,7 @@ import { isAddress } from 'ethers';
 export type UserDocument = User & Document;
 
 @Schema({ timestamps: true }) // tự tạo createdAt, updatedAt
-export class User extends BaseSchema {
+export class User {
   @Prop({
     type: String,
     unique: true,

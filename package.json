@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@colyseus/monitor": "^0.16.7",
+    "@colyseus/schema": "^2.0.37",
     "@colyseus/ws-transport": "^0.15.3",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^4.0.2",
