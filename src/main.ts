@@ -24,24 +24,21 @@ async function bootstrap() {
     },
   });
 
-  await app.init();
+  const NEST_PORT = parseInt(process.env.NEST_PORT || '3001');
+  await app.listen(NEST_PORT);
+  console.log(`Swagger UI: http://localhost:${NEST_PORT}/docs`);
 
-  Globals.nestApp = app;
-
-  const expressApp = app.getHttpAdapter().getInstance();
-  const httpServer = createServer(expressApp);
-
+  const httpServer = createServer();
   const gameService = app.get(GameService);
   gameService.createServer(httpServer);
 
   for (const { name, type } of ROOMS) {
     gameService.defineRoom(name, type);
-    console.log(`[Colyseus] Registered room: ${name}`);
   }
 
-  const PORT = parseInt(process.env.PORT || '3001');
-  await gameService.listen(PORT);
-  console.log(`✅ Swagger UI: http://localhost:${PORT}/docs`);
-  console.log(`Colyseus is running on http://localhost:${PORT}`);
+  const COLYSEUS_PORT = parseInt(process.env.COLYSEUS_PORT || '3002');
+  httpServer.listen(COLYSEUS_PORT, () => {
+    console.log(`Colyseus is running on ws://localhost:${COLYSEUS_PORT}`);
+  });
 }
 bootstrap();

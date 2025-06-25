@@ -38,7 +38,7 @@ export class AuthController {
 
   @Post(routesV1.auth.refreshToken)
   refresh(@Body() body: RefreshTokenRequestDto) {
-    return this.authService.refreshToken(body.refreshToken);
+    return this.authService.refreshToken(body.refresh_token);
   }
 
   @ApiResponse({

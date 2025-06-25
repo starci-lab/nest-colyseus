@@ -5,13 +5,13 @@ export class VerifyResponseDto {
     example: '',
     description: 'Access token',
   })
-  accessToken: string;
+  access_token: string;
 
   @ApiProperty({
     example: '',
     description: 'Refresh token',
   })
-  refreshToken: string;
+  refresh_token: string;
 
   @ApiProperty({
     example: '',

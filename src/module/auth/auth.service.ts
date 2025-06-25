@@ -23,11 +23,7 @@ export class AuthService {
 
   async generateMessage(): Promise<MessageResponseDto> {
     const message = randomUUID();
-    await this.cache.set(
-      `auth-message:${message.toLowerCase()}`,
-      '1',
-      30,
-    );
+    await this.cache.set(`auth-message:${message.toLowerCase()}`, '1', 30);
     return { message };
   }
 
@@ -107,8 +103,8 @@ export class AuthService {
     );
 
     return {
-      accessToken,
-      refreshToken,
+      access_token: accessToken,
+      refresh_token: refreshToken,
       wallet_address: user.wallet_address,
     };
   }

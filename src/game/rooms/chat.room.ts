@@ -15,7 +15,7 @@ export class ChatRoom extends Room<ChatState> {
     // this.onMessage('message', async (client: Client, message: string) => {
     //   const userServie = Globals.nestApp.get(UserService);
     //   const user = await userServie.findOne(client.sessionId);
-    //   const msg = user ? `${user.name}: ${message}` : message;
+    //   const msg = user ? `${user.wallet_address}: ${message}` : message;
     //   this.state.messages.push(msg);
     //   this.broadcast('message', msg);
     // });

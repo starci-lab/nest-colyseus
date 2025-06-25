@@ -72,8 +72,8 @@ describe('AuthService - verifySignature()', () => {
     const result = await service.verifySignature(message, signature, address);
 
     expect(result).toEqual({
-      accessToken: 'mocked-jwt',
-      refreshToken: 'mocked-jwt',
+      access_token: 'mocked-jwt',
+      refresh_token: 'mocked-jwt',
       wallet_address: lowerAddr,
     });
     expect(fakeUser.save).toHaveBeenCalled();
@@ -104,8 +104,8 @@ describe('AuthService - verifySignature()', () => {
     const result = await service.verifySignature(message, signature, address);
 
     expect(newUser.save).toHaveBeenCalled();
-    expect(result.accessToken).toBeDefined();
-    expect(result.refreshToken).toBeDefined();
+    expect(result.access_token).toBeDefined();
+    expect(result.refresh_token).toBeDefined();
     expect(result.wallet_address).toBe(lowerAddr);
   });
 
