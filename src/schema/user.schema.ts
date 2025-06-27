@@ -24,6 +24,12 @@ export class User {
 
   @Prop({ type: Date, default: null })
   last_active_at?: Date;
+
+  @Prop()
+  createdAt: Date;
+
+  @Prop()
+  updatedAt: Date;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

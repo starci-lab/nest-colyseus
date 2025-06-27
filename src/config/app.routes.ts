@@ -1,4 +1,5 @@
 const authRoot = 'auth';
+const userRoot = 'user';
 
 /**
  * Tạo các route cơ bản (GET one, UPDATE, DELETE) theo root truyền vào.
@@ -18,6 +19,11 @@ const v1 = 'v1';
 
 export const routesV1 = {
   version: v1,
+  // #region USER
+  user: {
+    getUser: `/${userRoot}/get-user`,
+  },
+  // #endregion
   // #region AUTH
   auth: {
     root: authRoot,
