@@ -10,6 +10,7 @@ import { GameModule } from './game/game.module';
 import { CacheModule } from '@libs/cache/cache.module';
 import { cacheConfig } from './config/cache.config';
 import { AuthModule } from './module/auth/auth.module';
+import { UserModule } from './module/user/user.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { AuthModule } from './module/auth/auth.module';
     }),
     GameModule,
     AuthModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

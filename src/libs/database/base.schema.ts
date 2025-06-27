@@ -10,6 +10,6 @@ export abstract class BaseSchema {
   @Prop({ type: Date, default: () => new Date(), required: true })
   updatedAt: Date;
 
-  @Prop({ type: String, required: true })
+  @Prop({ type: String, required: false })
   updatedBy: string;
 }
