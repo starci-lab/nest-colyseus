@@ -5,6 +5,7 @@ import { GameService } from './game/game.service';
 import { ROOMS } from './game/rooms';
 import { Globals } from './libs/utils/global';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ChatRoom } from 'src/game/rooms/chat.room';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
