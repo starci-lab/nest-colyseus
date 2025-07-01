@@ -11,6 +11,7 @@ import { CacheModule } from '@libs/cache/cache.module';
 import { cacheConfig } from './config/cache.config';
 import { AuthModule } from './module/auth/auth.module';
 import { UserModule } from './module/user/user.module';
+import { StoreItemModule } from './module/store-item/store-item.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { UserModule } from './module/user/user.module';
     GameModule,
     AuthModule,
     UserModule,
+    StoreItemModule,
   ],
   controllers: [AppController],
   providers: [AppService],
